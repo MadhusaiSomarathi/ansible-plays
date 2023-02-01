@@ -8,7 +8,7 @@
 
 - name: print
   debug:
-    Msg: “{{vars}}”
+    Msg: “{{SECRETS}}”
 
 - name: Import App Pre-Req Task file
   ansible.builtin.import_tasks: app-prereq.yml
