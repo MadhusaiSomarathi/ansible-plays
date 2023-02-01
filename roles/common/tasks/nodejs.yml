@@ -6,10 +6,6 @@
     name: nodejs
     state: installed
 
-- name: print
-  debug:
-    Msg: “{{SECRETS}}”
-
 - name: Import App Pre-Req Task file
   ansible.builtin.import_tasks: app-prereq.yml
 #
