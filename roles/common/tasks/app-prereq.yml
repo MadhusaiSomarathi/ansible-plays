@@ -4,18 +4,25 @@
   register: appuser
 
 ## Commented this to move towards standard process of downloading the content from artifact manager rather than downloading from git repo
+#- name: Downloading Application Content
+#  ansible.builtin.unarchive:
+#    src: https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip
+#    dest: /tmp
+#    remote_src: yes
+
+- name: Create Application Directory
+  ansible.builtin.file:
+    path: /home/roboshop/{{COMPONENT}}-tmp
+    state: directory
+    owner: roboshop
+    group: roboshop
+
 - name: Downloading Application Content
   ansible.builtin.unarchive:
     src: https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip
     dest: /tmp
     remote_src: yes
 
-#- name: Create Application Directory
-  ansible.builtin.file:
-    path: /home/roboshop/{{COMPONENT}}-tmp
-    state: directory
-    owner: roboshop
-    group: roboshop
 
 #- name: Downloading Application Content
 #  ansible.builtin.unarchive:
