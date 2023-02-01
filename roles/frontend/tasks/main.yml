@@ -38,17 +38,17 @@
 #    dest: /etc/nginx/nginx.conf
 #  notify: Restart Nginx Service
 
-#- name: Copy RoboShop Nginx Config file
-#  ansible.builtin.template:
-#    src: roboshop.conf
-#    dest: /etc/nginx/default.d/roboshop.conf
+- name: Copy RoboShop Nginx Config file
+  ansible.builtin.template:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
 #  notify: Restart Nginx Service
-#
-#- name: Start Nginx Service
-#  ansible.builtin.systemd:
-#    state: started
-#    name: nginx
-#    enabled: yes
+
+- name: Start Nginx Service
+  ansible.builtin.systemd:
+    state: started
+    name: nginx
+    enabled: yes
 #
 #- name: Install Filebeat
 #  ansible.builtin.import_role:
