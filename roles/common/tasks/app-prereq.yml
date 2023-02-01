@@ -39,5 +39,6 @@
     src: /tmp/{{COMPONENT}}-main/
     dest: /home/roboshop/{{COMPONENT}}/
     remote_src: yes
+    mode: u+rwx,g-wx,o-rwx
   become_user: roboshop
 
