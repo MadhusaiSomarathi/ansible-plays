@@ -9,11 +9,11 @@
     state: absent
 
 ## Commented this to move towards standard process of downloading the content from artifact manager rather than downloading from git repo
-#- name: Downloading Nginx Web Content & Extract it
-#  ansible.builtin.unarchive:
-#    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-#    dest: /tmp
-#    remote_src: yes
+- name: Downloading Nginx Web Content & Extract it
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /tmp
+    remote_src: yes
 #
 #- name: Copy Extracted Content
 #  ansible.builtin.copy:
