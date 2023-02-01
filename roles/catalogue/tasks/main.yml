@@ -1,5 +1,3 @@
 - name: print
-  hosts: localhost
-  tasks:
-    - name: Pull secret
-      debug: msg="{{SECRETS}}"
+  debug:
+    Msg: "{{SECRETS}}"
