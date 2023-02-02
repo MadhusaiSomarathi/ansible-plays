@@ -40,16 +40,16 @@
   ignore_errors: yes
   register: mysql_conn_status
 
+- name: Copy SQL File to reset password
+  ansible.builtin.template:
+    src: reset-root-pass.sql
+    dest: /tmp/reset-root-pass.sql
+  when: mysql_conn_status is failed
+
 - name: debug
   debug:
-    msg: "{{SECRETS}}"
-  when: mysql_conn_status.failed is true
-
-#- name: Copy SQL File to reset password
-#  ansible.builtin.template:
-#    src: reset-root-pass.sql
-#    dest: /tmp/reset-root-pass.sql
-#  when: mysql_conn_status is failed
+    msg: "{{out['content'] | b64decode}}"
+  when: mysql_conn_status is true
 #
 #- name: Change the root password
 #  ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{ out['content'] | b64decode | regex_findall('temporary password.*') |join(' ')  | split(' ') | last }}" </tmp/reset-root-pass.sql
