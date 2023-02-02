@@ -43,6 +43,7 @@
 - name: debug
   debug:
     msg: "{{mysql_conn_status.failed}}"
+  when: mysql_conn_status.failed is true
 #
 #- name: Copy SQL File to reset password
 #  ansible.builtin.template:
