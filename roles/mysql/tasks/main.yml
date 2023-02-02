@@ -38,11 +38,11 @@
     login_password: "{{ROBOSHOP_MYSQL_PASSWORD}}"
     filter: version
   ignore_errors: yes
-#  register: mysql_conn_status
+  register: mysql_conn_status
 
-#- name: debug
-#  debug:
-#    msg: "{{mysql_conn_status}}"
+- name: debug
+  debug:
+    msg: "{{mysql_conn_status}}"
 #
 #- name: Copy SQL File to reset password
 #  ansible.builtin.template:
