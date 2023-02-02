@@ -48,7 +48,7 @@
 
 - name: debug
   debug:
-    msg: "{{out}}"
+    msg: "{{out.content | b64decode}}"
   when: mysql_conn_status is failed
 #
 #- name: Change the root password
