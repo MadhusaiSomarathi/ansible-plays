@@ -11,8 +11,8 @@
 #  args:
 #    chdir: /home/roboshop/{{COMPONENT}}
 #  become_user: roboshop
-#
-#- name: Import SystemD tasks
-#  ansible.builtin.import_tasks: systemd.yml
+
+- name: Import SystemD tasks
+  ansible.builtin.import_tasks: systemd.yml
 
 
