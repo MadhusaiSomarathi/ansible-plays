@@ -24,10 +24,6 @@
     - { name: "gid", id: "{{appuser.group}}"}
   register: out
 
-- name: debug
-  debug:
-    msg: "{{out}}"
-
 - name: Import SystemD tasks
   ansible.builtin.import_tasks: systemd.yml
 
