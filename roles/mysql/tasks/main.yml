@@ -27,22 +27,18 @@
     src: /var/log/mysqld.log
   register: out
 
-- name: debug
-  debug:
-    msg: "{{out}}"
-#
 #- name: Install mysqlclient pip3
 #  ansible.builtin.pip:
 #    name: mysqlclient
 #    executable: pip3
-#
-#- name: Check MySQL Credentials
-#  community.mysql.mysql_info:
-#    login_user: root
-#    login_password: "{{ROBOSHOP_MYSQL_PASSWORD}}"
-#    filter: version
-#  ignore_errors: yes
-#  register: mysql_conn_status
+
+- name: Check MySQL Credentials
+  community.mysql.mysql_info:
+    login_user: root
+    login_password: "{{ROBOSHOP_MYSQL_PASSWORD}}"
+    filter: version
+  ignore_errors: yes
+  register: mysql_conn_status
 #
 #- name: Copy SQL File to reset password
 #  ansible.builtin.template:
