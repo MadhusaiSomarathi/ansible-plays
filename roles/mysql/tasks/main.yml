@@ -29,7 +29,7 @@
 
 - name: debug
   debug:
-    msg: {{out}}
+    msg: "{{out}}"
 #
 #- name: Install mysqlclient pip3
 #  ansible.builtin.pip:
