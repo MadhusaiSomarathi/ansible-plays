@@ -60,8 +60,8 @@
 
 - name: debug
   debug:
-    msg: "{{plugins_status}}"
-#
+    msg: "{{plugins_status | regex_findall('validate_password')}}"
+
 #- name: Uninstall Password Validate Plugin
 #  community.mysql.mysql_query:
 #    query: 'uninstall plugin validate_password;'
