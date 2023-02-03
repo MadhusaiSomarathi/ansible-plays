@@ -15,16 +15,16 @@
     dest: /tmp
     remote_src: yes
 
+- name: Create application directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
+
 - name: Copy Extracted Content
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html/
     remote_src: yes
-
-#- name: Create application directory
-#  ansible.builtin.file:
-#    path: /usr/share/nginx/html
-#    state: directory
 #
 #- name: Downloading Application Content
 #  ansible.builtin.unarchive:
