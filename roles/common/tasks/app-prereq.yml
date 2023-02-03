@@ -24,10 +24,10 @@
 #    remote_src: yes
 #  become_user: roboshop
 
-- name: Clean UP old App Content
-  ansible.builtin.file:
-    path: /home/roboshop/{{COMPONENT}}
-    state: absent
+#- name: Clean UP old App Content
+#  ansible.builtin.file:
+#    path: /home/roboshop/{{COMPONENT}}
+#    state: absent
 
 ## this approach has been taken to avoid application downtime if the download file is high and also download speed is low.
 - name: Rename Dir
@@ -39,6 +39,5 @@
     src: /tmp/{{COMPONENT}}-main/
     dest: /home/roboshop/{{COMPONENT}}/
     remote_src: yes
-    mode: u+rwx,g-wx,o-rwx
   become_user: roboshop
 
