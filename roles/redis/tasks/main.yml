@@ -18,7 +18,6 @@
     path: "{{item}}"
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
-  become: yes
   loop:
     - /etc/redis.conf
     - /etc/redis/redis.conf
