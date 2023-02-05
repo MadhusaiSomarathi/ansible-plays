@@ -17,9 +17,9 @@
         - { name: "roboshop.dev.frontend.USER_HOST", value: "http://user-dev.roboshop.internal:8080/"}
 #        - { name: "roboshop.dev.frontend.PAYMENT_HOST", value: "http://payment-dev.roboshop.internal:80/"}
         - { name: "roboshop.dev.frontend.SHIPPING_HOST", value: "http://shipping-dev.roboshop.internal:8080/"}
-#        - { name: "roboshop.dev.payment.USER_HOST", value: "user-dev.roboshop.internal"}
-#        - { name: "roboshop.dev.payment.CART_HOST", value: "cart-dev.roboshop.internal"}
-#        - { name: "roboshop.dev.payment.AMQP_HOST", value: "rabbitmq-dev.roboshop.internal"}
+        - { name: "roboshop.dev.payment.USER_HOST", value: "user-dev.roboshop.internal"}
+        - { name: "roboshop.dev.payment.CART_HOST", value: "cart-dev.roboshop.internal"}
+        - { name: "roboshop.dev.payment.AMQP_HOST", value: "rabbitmq-dev.roboshop.internal"}
         - { name: "roboshop.dev.shipping.CART_ENDPOINT", value: "cart-dev.roboshop.internal:8080"}
 #        - { name: "roboshop.dev.shipping.DB_HOST", value: "mysql-dev.roboshop.internal"}
 #        - { name: "roboshop.dev.user.REDIS_HOST", value: "redis-dev.roboshop.internal"}
