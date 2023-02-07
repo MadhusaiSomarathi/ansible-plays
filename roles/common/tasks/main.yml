@@ -1,3 +1,10 @@
+- name: Set Hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
+
+- name: Install Prometheus Node Exporter
+  ansible.builtin.shell: labauto prometheus-node-exporter
+  when: PROMETHEUS_MONITOR | bool
+
 - name: Install Botocore and boto3
   ansible.builtin.pip:
     name:
