@@ -20,11 +20,11 @@ groups:
 
           description: "High Memory Usage - [{{ $labels.Name }}]\n Private IP Address = [{{ $labels.Name }}]"
 
-      - alert: CPUHighUsage
-        expr: avg by (instance) (100 - (rate(node_cpu_seconds_total{mode="idle"}[1m]) * 100)) > 80
-        labels:
-          severity: critical
-        annotations:
-          summary: "High CPU Usage - [{{ $labels.Name }}]"
-
-          description: "High CPU Usage - [{{ $labels.Name }}]\n Private IP Address = [{{ $labels.Name }}]"
+#      - alert: CPUHighUsage
+#        expr: avg by (instance) (100 - (rate(node_cpu_seconds_total{mode="idle"}[1m]) * 100)) > 80
+#        labels:
+#          severity: critical
+#        annotations:
+#          summary: "High CPU Usage - [{{ $labels.Name }}]"
+#
+#          description: "High CPU Usage - [{{ $labels.Name }}]\n Private IP Address = [{{ $labels.Name }}]"
