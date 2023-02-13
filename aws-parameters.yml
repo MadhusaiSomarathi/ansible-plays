@@ -1,7 +1,7 @@
 - name: Create Parameters
   hosts: localhost
   tasks:
-    - name: Update a Parameter
+    - name: Update a Parameters
       community.aws.aws_ssm_parameter_store:
         name: "{{item.name}}"
         string_type: "String"
